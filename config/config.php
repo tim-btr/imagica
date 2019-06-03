@@ -17,7 +17,7 @@ class Core {
 
     static $META = [
 		'title' => '',
-		'descrption' => 'Редакция изображений',
+		'descrption' => '',
 		'keywords' => ''
 	];
 }

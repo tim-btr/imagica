@@ -87,14 +87,14 @@ body {
 }
 
 .aeb-edt {
-	background:url(/skins/admin/img/edit.png) no-repeat left;
+	background:url(/img/edit.png) no-repeat left;
 	background-size:contain;
 	margin-right:25px;
 	padding-left:20px;
 }
 
 .aeb-del {
-	background:url(/skins/admin/img/trash.png) no-repeat left;
+	background:url(/img/trash.png) no-repeat left;
 	background-size:contain;
 	padding-left:25px;
 }

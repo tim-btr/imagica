@@ -21,7 +21,7 @@ if(!file_exists('./'.Core::$MODEL.'/'.$_GET['module'].'/'.$_GET['page'].'.php') 
 include './'.Core::$MODEL.'/'.$_GET['module'].'/'.$_GET['page'].'.php';
 include './'.Core::$MODEL.'/'.$_GET['module'].'/view/'.$_GET['page'].'.tpl';
 
-$ob_content = ob_get_contents();
+$content = ob_get_contents();
 ob_end_clean();
 
 include './skins/'.Core::$SKIN.'/index.tpl';
