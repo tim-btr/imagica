@@ -1,0 +1,12 @@
+.logo, .lead span, .nav-link, #features h3, .testim-head {
+	text-transform:uppercase;
+}
+
+.logo:hover {
+	text-decoration: none;
+	color:#007bff;
+}
+
+nav, div.carousel {
+	margin-bottom: 25px;
+}

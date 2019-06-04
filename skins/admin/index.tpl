@@ -17,15 +17,13 @@
 	<?php 
 	if(isset($_SESSION['user']) && $_SESSION['user']['access'] == 2) {
 	?>
-	<a class="admin-menu-link" href="/admin/products">товары</a>
-	<a class="admin-menu-link" href="/admin/comments">комментарии</a>
+	<a class="admin-menu-link" href="/admin/articles">материалы</a>
   <a class="admin-menu-link" href="/admin/users">пользователи</a>
-  <a class="admin-menu-link" href="/admin/games">игры</a>
 	<?php }?>
   </div>
   <div class="adm-inner">
   <?php
-  echo $ob_content;
+  echo $content;
   ?>
   </div>
   

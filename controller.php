@@ -27,7 +27,8 @@ if(isset($_GET['route'])) {
 }
 
 $navigation = [
-
+	''=>'Главная',
+	'articles'=>'Материалы',
 ];
 
 if(!isset($_GET['module'])) {

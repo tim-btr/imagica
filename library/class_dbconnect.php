@@ -1,4 +1,25 @@
 <?php
+/*
+ALIAS:
+q(); Запрос
+es(); mysqli_real_escape_string
+
+РАБОТА С ОБЪЕКТОМ ВЫБОРКИ
+$res = q(); // Запрос с возвратом результата
+$res->num_rows; // Количество возвращенных строк - mysqli_num_rows();
+$res->fetch_assoc(); // достаём запись - mysqli_fetch_assoc();
+$res->close(); // Очищаем результат выборки
+
+РАБОТА С ПОДКЛЮЧЕННОЙ MYSQL
+\DB::_()->affected_rows; // Количество изменённых записей
+\DB::_()->insert_id; // Последний ID вставки
+\DB::_()->real_escape_string(); // аналог es();
+\DB::_()->query(); // аналог q
+\DB::_()->multi_ query(); // Множественные запросы
+
+\DB::close(); // Закрываем соединение с БД
+*/
+
 class dbConnect {
 	static public $mysqli  = []; //наши соединения
 	static public $connect = []; //идентификаторы

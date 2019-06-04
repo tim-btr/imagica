@@ -1,26 +1,5 @@
 <div class="container">
 
-	<!-- //// ЗАГОЛОВОК //// -->
-	<header>
-		<h1><a href="/">каркасс</a></h1>
-		<p class="lead">стандартный шаблон каркасса для простых сайтов-визиток, интернет-магазинов, посадочных страниц и т.д.</p>
-	</header>
-
-	<!-- //// МЕНЮ //// -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
-				<a href="#" class="nav-link">главная</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="nav-link">инфо</a>
-			</li>
-			<li class="nav-item">
-				<a href="#" class="nav-link">отзывы</a>
-			</li>
-		</ul>
-	</nav>
-
 	<!-- //// КАРУСЕЛЬ //// -->
 	<div class="carousel slide" id="carouselExampleIndicators">
 		<ol class="carousel-indicators">
@@ -110,24 +89,18 @@
 	<!-- //// ОТЗЫВЫ //// -->
 	<section id="testimonials">
 		<div class="panel">
-			<div class="panel-heading">несколько отзывов от заказчиков</div>
+			<div class="h3 testim-head">несколько отзывов от заказчиков</div>
 			<div class="row">
 				<div class="col-lg-6">
-					<blockquote>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, temporibus.
-						<small>
-							Tim BTR
-							<cite>source</cite>
-						</small>
+					<blockquote class="blockquote">
+						<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+						<footer class="blockquote-footer">Taken from <cite title="Source Title">Tim BTR</cite></footer>
 					</blockquote>
 				</div>
 				<div class="col-lg-6">
-					<blockquote>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, temporibus.
-						<small>
-							Tim BTR
-							<cite>source</cite>
-						</small>
+					<blockquote class="blockquote">
+						<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+						<footer class="blockquote-footer">Taken from <cite title="Source Title">Tim BTR</cite></footer>
 					</blockquote>
 				</div>
 			</div>
@@ -137,11 +110,11 @@
 
 	<!-- //// ЗАКАЗ //// -->
 	<section id="order">
-		<div class="well well-lg">
-			<h3 class="text-center">Order</h3>
+		<div class="card card-body bg-light">
+			<h3 class="text-center">ЗАКАЗ</h3>
 			<p class="text-center">Здесь вы можете оформить заказ</p>
 			<p class="text-center">
-				<a href="" class="btn btn-primary">Get It!</a>
+				<a href="" class="btn btn-primary">Оформить</a>
 			</p>
 		</div>
 	</section>
