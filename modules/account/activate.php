@@ -3,7 +3,7 @@ if(isset($_GET['hash'])) {
 	q("
 		UPDATE `users` SET 
 		`active` = 1, 
-		`access` = 1
+		`role` = 'user'
 		WHERE `hash` = '".escStr($_GET['hash'])."'
 		AND   `id`   = ".(int)$_GET['id']
 	);  
@@ -12,8 +12,8 @@ if(isset($_GET['hash'])) {
 	
 	$res = q("
 		SELECT * FROM `users` 
-		WHERE `hash` = '".escStr($_GET['hash'])."'
-		AND   `id`   = ".(int)$_GET['id']."
+		WHERE `id`   = ".(int)$_GET['id']."
+		AND `active` = 1
 		LIMIT 1
 	");
 	if($res->num_rows) {
@@ -22,4 +22,3 @@ if(isset($_GET['hash'])) {
 } else {
 	$notice = 'Вы прошли по неверной ссылке';
 }
-$res->close;

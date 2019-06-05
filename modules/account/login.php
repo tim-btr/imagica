@@ -1,7 +1,4 @@
-<?php 
-Core::$CSS[] = '<link rel="stylesheet" href="/css/game.css">';
-
-
+<?php
 if(isset($_POST['login'], $_POST['pass'])) { 
 	$res = q("
 		SELECT * FROM `users` WHERE
@@ -36,6 +33,3 @@ if(isset($_POST['login'], $_POST['pass'])) {
 	}
 }
 
-if(isset($_GET['exit']) && 1 == $_GET['exit']) {
-	include './modules/account/exit.php';
-}

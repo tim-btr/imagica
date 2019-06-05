@@ -16,7 +16,7 @@
   <?php
    if(count(Core::$JS)) {
         echo implode('<br>', Core::$JS);
-    }
+   }
   ?>
 
 </head>
@@ -24,6 +24,20 @@
 
 <div class="container">
 	<!-- //// ЗАГОЛОВОК //// -->
+	<div class="container">
+		<?php
+		if(isset($_SESSION['user'])) { ?>
+			  <span>Приветствую, <?php echo $_SESSION['user']['name'];?></span>
+			  <a href="/account/exit">ВЫХОД</a>
+		<?php
+		} else {
+		?>
+			  <a href="/account/login">ВХОД</a>
+			  <a href="/account/register">РЕГИСТРАЦИЯ</a>
+		<?php
+	  }
+	  ?>
+	</div>
 	<header>
 		<h1><a href="/" class="logo">каркасс</a></h1>
 		<p class="lead"><span>с</span>тандартный шаблон каркасса для простых сайтов-визиток, интернет-магазинов, посадочных страниц и т.д.</p>

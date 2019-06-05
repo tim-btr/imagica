@@ -1,4 +1,5 @@
-<div class="auth-wrap">
+
+<div class="container">
   <form action="/account/login" method="post" class="auth-form" onsubmit="if(!authSubm('log-auth', 'log-pass')) {return false} else {return true};">
 
     <p>Логин</p>

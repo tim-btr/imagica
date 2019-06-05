@@ -10,7 +10,7 @@ if(isset($_SESSION['user'])) {
 	
 	$_SESSION['user'] = $res->fetch_assoc();
 	
-	if($_SESSION['user']['access'] != 2) {
+	if($_SESSION['user']['role'] != 'admin') {
 		include './modules/account/exit.php';
 	}
 } else {

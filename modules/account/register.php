@@ -6,9 +6,9 @@ if(isset($_POST['login'], $_POST['name'], $_POST['pass'], $_POST['email']) ) {
 	
 	if(empty($_POST['login'])) {
 		$errors['login'] = 'Не заполнен логин';
-	} elseif(mb_strlen($_POST['login']) < 2) {
+	} elseif(mb_strlen($_POST['login']) < 3) {
 		$errors['login'] = 'Логин слишком короткий';
-	} elseif(mb_strlen($_POST['login']) > 12) {
+	} elseif(mb_strlen($_POST['login']) > 10) {
 		$errors['login'] = 'Логин слишком длинный';
 	}
 
@@ -46,7 +46,6 @@ if(isset($_POST['login'], $_POST['name'], $_POST['pass'], $_POST['email']) ) {
 		if($res->num_rows) {
 			$errors['email'] = 'Пользователь с такой эл. почтой уже существует';
 		}
-		
 	}
 	
 	if(count($errors) == 0) {
@@ -61,8 +60,7 @@ if(isset($_POST['login'], $_POST['name'], $_POST['pass'], $_POST['email']) ) {
 			`hash`     = '".escStr(myHash($_POST['login'].$_POST['email']))."'
 		") or die(mysqli_error($link));
 
-		//$id = mysqli_insert_id($con);
-		//$id = DbConnect::_()->insert_id();
+		$id = DbConnect::_()->insert_id;
 
 		$_SESSION['register'] = 'ok';
 		
@@ -71,7 +69,8 @@ if(isset($_POST['login'], $_POST['name'], $_POST['pass'], $_POST['email']) ) {
 		Mail::$text = '
 			Чтобы активировать Вашу учётную запись, пройдите по <a href="'.Core::$domain.'/index.php?module=account&page=activate&id='.$id.'&hash='.escStr(myHash($_POST['login'].$_POST['email'])).'">данной ссылке</a> ';
 		Mail::send();
-		
+
+		$_SESSION['code'] = Mail::$text;
 		header('Location: /account/register');
 		exit;
 	}
