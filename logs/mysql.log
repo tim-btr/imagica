@@ -27051,3 +27051,135 @@ Unknown column 'addition' in 'field list'
 
 		=================================
  
+Запрос не был выполнен.
+
+		ЗАПРОС: 
+			UPDATE `users` SET 
+			`name` = 'yii',
+			`login` = 'kido_koiin',
+			`password` = 'aozUUO4Yg9Adc',
+			`email` = 'kido_koiin@mail.ru',
+			`age` = 45,
+			`sex` = 'Женский',
+			`access` = 0
+			WHERE `id` = 1
+Unknown column 'access' in 'field list'
+
+		Выявлена ошибка в файле: C:\_WORK\OPENSERVER\_SERVER\domains\imagicac\modules\admin\users\edit-user.php
+
+		Строка: 88, текст запроса: 
+			UPDATE `users` SET 
+			`name` = 'yii',
+			`login` = 'kido_koiin',
+			`password` = 'aozUUO4Yg9Adc',
+			`email` = 'kido_koiin@mail.ru',
+			`age` = 45,
+			`sex` = 'Женский',
+			`access` = 0
+			WHERE `id` = 1
+
+		Время: 2019-06-06 03:06:38
+
+		Ошибка: 
+
+		=================================
+ 
+Запрос не был выполнен.
+
+		ЗАПРОС: 
+			UPDATE `users` SET 
+			`name` = 'yii',
+			`login` = 'kido_koiin',
+			`password` = 'aozUUO4Yg9Adc',
+			`email` = 'kido_koiin@mail.ru',
+			`age` = 333,
+			`sex` = 'Женский',
+			`access` = 0
+			WHERE `id` = 1
+Unknown column 'access' in 'field list'
+
+		Выявлена ошибка в файле: C:\_WORK\OPENSERVER\_SERVER\domains\imagicac\modules\admin\users\edit-user.php
+
+		Строка: 88, текст запроса: 
+			UPDATE `users` SET 
+			`name` = 'yii',
+			`login` = 'kido_koiin',
+			`password` = 'aozUUO4Yg9Adc',
+			`email` = 'kido_koiin@mail.ru',
+			`age` = 333,
+			`sex` = 'Женский',
+			`access` = 0
+			WHERE `id` = 1
+
+		Время: 2019-06-06 04:06:24
+
+		Ошибка: 
+
+		=================================
+ 
+Запрос не был выполнен.
+
+		ЗАПРОС: 
+			UPDATE `users` SET 
+			`name` = 'yii',
+			`login` = 'kido_koiin',
+			`password` = 'aozUUO4Yg9Adc',
+			`email` = 'kido_koiin@mail.ru',
+			`age` = 350,
+			`sex` = 'Женский',
+			`role` = admin
+			WHERE `id` = 1
+Unknown column 'admin' in 'field list'
+
+		Выявлена ошибка в файле: C:\_WORK\OPENSERVER\_SERVER\domains\imagicac\modules\admin\users\edit-user.php
+
+		Строка: 88, текст запроса: 
+			UPDATE `users` SET 
+			`name` = 'yii',
+			`login` = 'kido_koiin',
+			`password` = 'aozUUO4Yg9Adc',
+			`email` = 'kido_koiin@mail.ru',
+			`age` = 350,
+			`sex` = 'Женский',
+			`role` = admin
+			WHERE `id` = 1
+
+		Время: 2019-06-06 04:06:48
+
+		Ошибка: 
+
+		=================================
+ 
+Запрос не был выполнен.
+
+		ЗАПРОС: 
+			UPDATE `users` SET 
+			`name` = 'yii',
+			`login` = 'kido_koiin',
+			`password` = 'aozUUO4Yg9Adc',
+			`email` = 'kido_koiin@mail.ru',
+			`age` = 232,
+			`sex` = 'Женский',
+			`role` = 'admin'
+			WHERE `id` = 1
+Data too long for column 'sex' at row 1
+
+		Выявлена ошибка в файле: C:\_WORK\OPENSERVER\_SERVER\domains\imagicac\modules\admin\users\edit-user.php
+
+		Строка: 100, текст запроса: 
+			UPDATE `users` SET 
+			`name` = 'yii',
+			`login` = 'kido_koiin',
+			`password` = 'aozUUO4Yg9Adc',
+			`email` = 'kido_koiin@mail.ru',
+			`age` = 232,
+			`sex` = 'Женский',
+			`role` = 'admin'
+			WHERE `id` = 1
+
+		Время: 2019-06-06 05:06:27
+
+		Ошибка: 
+
+		=================================
+ 

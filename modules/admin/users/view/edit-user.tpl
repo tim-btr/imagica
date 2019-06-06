@@ -18,7 +18,7 @@ if(!isset($notice) ) { ?>
 	   <td><?php if(isset($errors['pass'])) {echo toHtm($errors['pass']);} ?></td>
     </tr>
     <tr>
-       <td>Электронная почта</td>
+       <td>Электронная почта<span>*</span></td>
 	   <td><input type="text" name="email" value="<?php if(isset($_POST['email'])) {echo toHtm($_POST['email']);}else{echo toHtm($row['email']);} ?>"></td>
 	   <td><?php if(isset($errors['email'])) {echo toHtm($errors['email']);} ?></td>
     </tr>
@@ -29,12 +29,25 @@ if(!isset($notice) ) { ?>
 	</tr>
 	<tr>
 	  <td>Пол пользователя</td>
-	  <td><label><input type="radio" name="sex" value="Женский" align="left" <?php if(isset($row['sex']) && $row['sex'] == 'Женский') {echo 'checked';} ?>>Ж</label> <label><input type="radio" name="sex" value="Мужской" <?php if(!isset($row['sex']) || (isset($row['sex']) && $row['sex'] == 'Мужской')) {echo 'checked';} ?>>М</label></td>
+	  <td>
+			<label>
+				<input type="radio" name="sex" value="f" align="left" <?php if(isset($row['sex']) && $row['sex'] == 'f') {echo 'checked';} ?>>Ж
+			</label>
+			<label>
+				<input type="radio" name="sex" value="m" <?php if(!isset($row['sex']) || (isset($row['sex']) && $row['sex'] == 'm')) {echo 'checked';} ?>>М</label>
+		</td>
 	  <td></td>
 	</tr>
 	<tr>
-	  <td>Внести пользователя в бан</td>
-	  <td><input type="checkbox" name="banned" value="ban" <?php ?>></td>
+		<?php
+		if($row['role'] !== 'banned') { ?>
+				<td>Внести пользователя в бан</td>
+				<td><input type="checkbox" name="ban" value="ban"></td> <?php
+		} else { ?>
+			<td>Разбанить пользователя</td>
+			<td><input type="checkbox" name="ban" value="unban"></td> <?php
+		}
+		?>
 	</tr>
 	
 	<tr>

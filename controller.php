@@ -40,7 +40,6 @@ if(!isset($_GET['module'])) {
 		LIMIT 1
 	");
 
-
 	if(!$res->num_rows){
 		header('Location: /errors/404');
 		exit;

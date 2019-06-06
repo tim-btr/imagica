@@ -9,8 +9,8 @@
 </head>
 <body>
   <div class="adm-top-banner">
-	<a href="/admin/static/main"><img src="/img/logo2.png" alt="logo"></a>
-    <a href="/account/login?exit=1" class="admin-top-link">выход</a>
+	<a href="/admin/static/main"><img src="" alt="logo"></a>
+    <a href="/account/exit" class="admin-top-link">выход</a>
 	<a class="admin-top-link" href="/">на сайт</a><div class="clear"></div>
   </div>
   <div class="adm-menu-div">

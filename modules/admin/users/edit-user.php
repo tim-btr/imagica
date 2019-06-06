@@ -16,8 +16,8 @@ if (isset($_GET['key2']) && $_GET['key2'] == 'edit') {
 	$res->close();
 }
 
-if (isset($_POST['name'],$_POST['login'],$_POST['pass'],$_POST['email'],$_POST['age'],$_POST['sex'])) {
-	$errors = array();
+if (isset($_POST['name'], $_POST['login'], $_POST['pass'], $_POST['email'])) {
+	$errors = [];
 
 	if(empty($_POST['name'])){
 		$errors['name'] = 'Не заполнено имя';
@@ -25,9 +25,9 @@ if (isset($_POST['name'],$_POST['login'],$_POST['pass'],$_POST['email'],$_POST['
 
 	if(empty($_POST['login'])) {
 		$errors['login'] = 'Не заполнен логин';
-	} elseif(mb_strlen($_POST['login']) < 2) {
+	} elseif(mb_strlen($_POST['login']) < 3) {
 		$errors['login'] = 'Логин слишком короткий';
-	} elseif(mb_strlen($_POST['login']) > 12) {
+	} elseif(mb_strlen($_POST['login']) > 10) {
 		$errors['login'] = 'Логин слишком длинный';
 	}
 
@@ -43,12 +43,6 @@ if (isset($_POST['name'],$_POST['login'],$_POST['pass'],$_POST['email'],$_POST['
 
 	if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
 		$errors['email'] = 'Не заполнен емейл или он некорректен';
-	}
-
-	if(isset($_POST['banned']) && $_POST['banned'] == 'ban'){
-		$_POST['banned'] = 0;
-	} else {
-		$_POST['banned'] = (int)$row['access'];
 	}
 
 	if(count($errors) == 0){
@@ -75,6 +69,28 @@ if (isset($_POST['name'],$_POST['login'],$_POST['pass'],$_POST['email'],$_POST['
 		}		
 	}
 
+	if(isset($_POST['ban'])){
+		if($_POST['ban'] == 'ban') {
+			$role = 'banned';
+		} else {
+			$role = 'user';
+		}
+	} else {
+		$role = $row['role'];
+	}
+
+	if(isset($_POST['age'])){
+		$age = (int)$_POST['age'];
+	} else {
+		$age = (int)$row['age'];
+	}
+
+	if(isset($_POST['sex'])){
+		$sex = $_POST['sex'];
+	} else {
+		$sex = $row['sex'];
+	}
+
 	if(count($errors) == 0){
 		q("
 			UPDATE `users` SET 
@@ -82,9 +98,9 @@ if (isset($_POST['name'],$_POST['login'],$_POST['pass'],$_POST['email'],$_POST['
 			`login` = '".escStr($_POST['login'])."',
 			`password` = '".escStr($password)."',
 			`email` = '".escStr($_POST['email'])."',
-			`age` = ".(int)$_POST['age'].",
-			`sex` = '".escStr($_POST['sex'])."',
-			`access` = ".(int)$_POST['banned']."
+			`age` = ".$age.",
+			`sex` = '".$sex."',
+			`role` = '".$role."'
 			WHERE `id` = ".(int)$_GET['key3']
 		);
 

@@ -1,5 +1,5 @@
 <?php 
-function whatis($arg) {
+function wtf($arg) {
 	echo '<pre>';
 	print_r($arg);
 	echo '</pre>';
