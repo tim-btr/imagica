@@ -36,7 +36,7 @@ if(!isset($_GET['module'])) {
 } else {
 	$res = q("
 		SELECT * FROM `pages`
-		WHERE `module` = '".escStr($_GET['module'])."'
+		WHERE `module` = '".es($_GET['module'])."'
 		LIMIT 1
 	");
 

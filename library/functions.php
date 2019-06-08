@@ -1,9 +1,54 @@
-<?php 
-function wtf($arg) {
-	echo '<pre>';
-	print_r($arg);
-	echo '</pre>';
-} 
+<?php
+/**
+ * @param $el
+ * @param bool $stop
+ * Отладочная функция
+ */
+function wtf($el, $stop = false) {
+	echo '<pre>'.htmlspecialchars(print_r($el, 1)).'</pre>';
+	if(!$stop) {
+		exit();
+	}
+}
+
+/*
+ * Функции - оболочки для обработки массивов
+ * intAll
+ * floatAll
+ * hc
+ * es
+ */
+function intAll($el) {
+	if(!is_array($el)) {
+		$el = (int)($el);
+	} else {
+		$el = array_map('intAll',$el);
+	}
+	return $el;
+}
+
+function floatAll($el) {
+	if(!is_array($el)) {
+		$el = (float)($el);
+	} else {
+		$el = array_map('floatAll',$el);
+	}
+	return $el;
+}
+
+function hc($el) {
+	if(!is_array($el)) {
+		$el = htmlspecialchars($el);
+	} else {
+		$el = array_map('hc',$el);
+	}
+	return $el;
+}
+
+function es($el,$key = 0) {
+	return \dbconnect::_($key)->real_escape_string($el);
+}
+
 
 function __autoload($class_name) {
 	include './library/class_'.$class_name.'.php';
@@ -30,49 +75,22 @@ function q($query, $key = 0) {
 	return $res;
 }
 
-//альтернатива для wtf()
-function showArr($arg) {
-	echo '<pre>';
-	echo var_dump($arg); 
-	echo '</pre>';
+/*
+ * Хэширование (для паролей гл. образом)
+ */
+function myHash($var, $salt = 'mmorpg', $salt2 = 'wtfiamdhere') {
+	return crypt(md5($var.$salt),$salt2);
 }
 
-function toInt($arg) {
-	if(!is_array($arg) ) {
-		$arg = (int)$arg;
-	} else {
-		$arg = array_map('toInt', $arg);
+/*
+function isAdmin() {
+	if(!empty(User::$role) && User::$role == 'admin') {
+		return true;
 	}
-	return $arg;
+	return false;
 }
 
-function toFl($arg) {
-	if(!is_array($arg) ) {
-		$arg = (float)$arg;
-	} else {
-		$arg = array_map('toFloat', $arg);
-	}
-	return $arg;
-}
 
-function toHtm($arg) {
-	if(!is_array($arg) ) {
-		$arg = htmlspecialchars($arg);
-	} else {
-		$arg = array_map('toHtm', $arg);
-	}
-	return $arg;
-}
 
-function escStr($arg, $key=0) {
-	return dbconnect::_($key)->real_escape_string($arg);
-}
-
-function myHash($var) {
-	$salt = 'abc';
-	$salt2 = 'aooo1a';
-	$var = crypt(md5($var.$salt), $salt2);
-	return $var;
-}
-
+ */
 

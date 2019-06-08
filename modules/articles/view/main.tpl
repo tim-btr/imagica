@@ -12,9 +12,9 @@
 	$i = 1;
 	while ($row = $result->fetch_assoc()) { ?>
 		  <section class="article-preview">
-				<p class="h3"><?php echo $i.'. '.toHtm($row['title']);?></p>
-				<p><?php echo toHtm($row['description']);?></p>
-				<a href="/articles/single/<?php echo toHtm($row['id']) ?>" class="btn btn-primary">Подробнее &rarr;</a>
+				<p class="h3"><?php echo $i.'. '.hc($row['title']);?></p>
+				<p><?php echo hc($row['description']);?></p>
+				<a href="/articles/single/<?php echo hc($row['id']) ?>" class="btn btn-primary">Подробнее &rarr;</a>
 			</section>
 		<hr>
 			<?php

@@ -9,12 +9,12 @@
 	?>
 	</p>
 	<section class="single-article">
-		<p class="h3"><?php echo toHtm($row['title']);?></p>
-		<p class="full-text"><?php echo toHtm($row['text']);?></p>
+		<p class="h3"><?php echo hc($row['title']);?></p>
+		<p class="full-text"><?php echo hc($row['text']);?></p>
 		<div>
-			<small class="text-muted"><?php echo toHtm($row['author']);?></small>
+			<small class="text-muted"><?php echo hc($row['author']);?></small>
 
-			<small class="text-muted float-lg-right"><?php echo toHtm($row['date']);?></small>
+			<small class="text-muted float-lg-right"><?php echo hc($row['date']);?></small>
 		</div>
 	</section>
 </div>

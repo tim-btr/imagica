@@ -4,7 +4,7 @@ if(isset($_GET['hash'])) {
 		UPDATE `users` SET 
 		`active` = 1, 
 		`role` = 'user'
-		WHERE `hash` = '".escStr($_GET['hash'])."'
+		WHERE `hash` = '".es($_GET['hash'])."'
 		AND   `id`   = ".(int)$_GET['id']
 	);  
 	

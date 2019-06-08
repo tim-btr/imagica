@@ -5,33 +5,33 @@ if(!isset($notice) ) { ?>
 	<tr>
 		<td>Заголовок: <span>*</span></td>
 		<td>
-			<input type="text" name="title" value="<?php if(isset($_POST['title'])) {echo toHtm($_POST['title']);} else {echo toHtm($row['title']);} ?>">
+			<input type="text" name="title" value="<?php if(isset($_POST['title'])) {echo hc($_POST['title']);} else {echo hc($row['title']);} ?>">
 		</td>
-		<td><?php if(isset($errors['title'])) {echo toHtm($errors['title']);} ?></td>
+		<td><?php if(isset($errors['title'])) {echo hc($errors['title']);} ?></td>
 	</tr>
 
 	<tr>
 		<td>Краткое описание: <span>*</span></td>
 		<td>
-			<textarea name="description" id="" cols="30" rows="10"><?php if(isset($_POST['description'])) {echo toHtm($_POST['description']);} else {echo toHtm($row['description']);} ?></textarea>
+			<textarea name="description" id="" cols="30" rows="10"><?php if(isset($_POST['description'])) {echo hc($_POST['description']);} else {echo hc($row['description']);} ?></textarea>
 		</td>
-		<td><?php if(isset($errors['description'])) {echo toHtm($errors['description']);} ?></td>
+		<td><?php if(isset($errors['description'])) {echo hc($errors['description']);} ?></td>
 	</tr>
 
 	<tr>
 		<td>Полный текст: <span>*</span></td>
 		<td>
 			<textarea name="text" text id="" cols="50" rows="20">
-				<?php if(isset($_POST['text'])) {echo toHtm($_POST['text']);} else {echo toHtm($row['text']);} ?>
+				<?php if(isset($_POST['text'])) {echo hc($_POST['text']);} else {echo hc($row['text']);} ?>
 			</textarea>
 		</td>
-		<td><?php if(isset($errors['text'])) {echo toHtm($errors['text']);} ?></td>
+		<td><?php if(isset($errors['text'])) {echo hc($errors['text']);} ?></td>
 	</tr>
 
 	<tr>
 		<td>Автор: <span>*</span></td>
-		<td><input type="text" name="author" value="<?php if(isset($_POST['author'])) {echo toHtm($_POST['author']);} else {echo toHtm($row['author']);} ?>"></td>
-		<td><?php if(isset($errors['author'])) {echo toHtm($errors['author']);} ?></td>
+		<td><input type="text" name="author" value="<?php if(isset($_POST['author'])) {echo hc($_POST['author']);} else {echo hc($row['author']);} ?>"></td>
+		<td><?php if(isset($errors['author'])) {echo hc($errors['author']);} ?></td>
 	</tr>
 
 	<tr>
@@ -44,7 +44,7 @@ if(!isset($notice) ) { ?>
 </table>
 <?php
 } else {
-	echo $notice;
+	  echo $notice;
 }
 
 

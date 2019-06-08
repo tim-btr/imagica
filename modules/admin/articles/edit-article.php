@@ -39,10 +39,10 @@ if (isset($_POST['title'], $_POST['description'], $_POST['text'], $_POST['author
 	if(count($errors) == 0){
 		q("
 			UPDATE `articles` SET 
-			`title` = '".escStr($_POST['title'])."',
-			`description` = '".escStr($_POST['description'])."',
-			`text` = '".escStr($_POST['text'])."',
-			`author` = '".escStr($_POST['author'])."'
+			`title` = '".es($_POST['title'])."',
+			`description` = '".es($_POST['description'])."',
+			`text` = '".es($_POST['text'])."',
+			`author` = '".es($_POST['author'])."'
 			WHERE `id` = ".(int)$_GET['key3']
 		) or die(mysqli_error());
 

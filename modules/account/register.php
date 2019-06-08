@@ -31,7 +31,7 @@ if(isset($_POST['login'], $_POST['name'], $_POST['pass'], $_POST['email']) ) {
 	if(count($errors) == 0) {
 		$res = q("
 			SELECT * FROM `users`
-			WHERE `login` = '".escStr($_POST['login'])."'
+			WHERE `login` = '".es($_POST['login'])."'
 			LIMIT 1
 		");
 		if($res->num_rows) {
@@ -40,7 +40,7 @@ if(isset($_POST['login'], $_POST['name'], $_POST['pass'], $_POST['email']) ) {
 		
 		$res = q("
 			SELECT * FROM `users`
-			WHERE `email` = '".escStr($_POST['email'])."'
+			WHERE `email` = '".es($_POST['email'])."'
 			LIMIT 1
 		");
 		if($res->num_rows) {
@@ -51,23 +51,23 @@ if(isset($_POST['login'], $_POST['name'], $_POST['pass'], $_POST['email']) ) {
 	if(count($errors) == 0) {
 		q("
 			INSERT INTO `users` SET
-			`login`    = '".escStr($_POST['login'])."',
-			`password` = '".escStr(myHash($_POST['pass']))."',
-			`name`     = '".escStr($_POST['name'])."',
-			`email`    = '".escStr($_POST['email'])."',
+			`login`    = '".es($_POST['login'])."',
+			`password` = '".es(myHash($_POST['pass']))."',
+			`name`     = '".es($_POST['name'])."',
+			`email`    = '".es($_POST['email'])."',
 			`age`      = ".(int)$_POST['age'].",
-			`sex`      = '".escStr($_POST['sex'])."',
-			`hash`     = '".escStr(myHash($_POST['login'].$_POST['email']))."'
+			`sex`      = '".es($_POST['sex'])."',
+			`hash`     = '".es(myHash($_POST['login'].$_POST['email']))."'
 		") or die(mysqli_error($link));
 
 		$id = DbConnect::_()->insert_id;
 
 		$_SESSION['register'] = 'ok';
 		
-		Mail::$to = escStr($_POST['email']);
+		Mail::$to = es($_POST['email']);
 		Mail::$subject = 'Подтверждение регистрации';
 		Mail::$text = '
-			Чтобы активировать Вашу учётную запись, пройдите по <a href="'.Core::$domain.'/index.php?module=account&page=activate&id='.$id.'&hash='.escStr(myHash($_POST['login'].$_POST['email'])).'">данной ссылке</a> ';
+			Чтобы активировать Вашу учётную запись, пройдите по <a href="'.Core::$domain.'/index.php?module=account&page=activate&id='.$id.'&hash='.es(myHash($_POST['login'].$_POST['email'])).'">данной ссылке</a> ';
 		Mail::send();
 
 		$_SESSION['code'] = Mail::$text;

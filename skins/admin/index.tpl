@@ -2,8 +2,8 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="<?php echo toHtm(Core::$META['descrption']); ?>">
-    <meta name="keywords" content="<?php echo toHtm(Core::$META['keywords']); ?>">
+	<meta name="description" content="<?php echo hc(Core::$META['descrption']); ?>">
+    <meta name="keywords" content="<?php echo hc(Core::$META['keywords']); ?>">
     <link rel="stylesheet" href="/skins/admin/css/style-admin.css">
 	<title></title>
 </head>

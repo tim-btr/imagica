@@ -27,8 +27,8 @@ if(isset($_SESSION['user'])) {
 	$res = q("
 		SELECT * FROM `users` WHERE
 		`id`   = ".(int)$_COOKIE['auth_id']." AND
-		`hash` = '".escStr($_COOKIE['auth_hash'])."' AND 
-		`addition` = '".escStr(myHash($_SERVER['HTTP_USER_AGENT']))."'
+		`hash` = '".es($_COOKIE['auth_hash'])."' AND 
+		`addition` = '".es(myHash($_SERVER['HTTP_USER_AGENT']))."'
 		LIMIT 1
 	");
 	

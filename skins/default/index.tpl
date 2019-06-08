@@ -2,12 +2,12 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="<?php echo toHtm(Core::$META['descrption']); ?>">
-  <meta name="keywords" content="<?php echo toHtm(Core::$META['keywords']); ?>">
-  <title><?php echo toHtm(Core::$META['title']); ?></title>
+  <meta name="description" content="<?php echo hc(Core::$META['descrption']); ?>">
+  <meta name="keywords" content="<?php echo hc(Core::$META['keywords']); ?>">
+  <title><?php echo hc(Core::$META['title']); ?></title>
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/skins/<?php echo toHtm(Core::$SKIN);?>/css/custom.css">
+	<link rel="stylesheet" href="/skins/<?php echo hc(Core::$SKIN);?>/css/custom.css">
   <?php 
     if(count(Core::$CSS)) {
         echo implode('<br>', Core::$CSS);
@@ -50,12 +50,12 @@
 			foreach ($navigation as $k=>$v) {
 				if($k == '') { ?>
 					<li class="nav-item">
-						<a href="/" class="nav-link <?php echo($_GET['module'] == 'static' && $_GET['page'] == 'main' ? 'active' : '') ?>"><?php echo $v; ?></a>
+						<a href="/" class="nav-link <?php echo($_GET['module'] == 'static' && $_GET['page'] == 'main' ? 'active' : '') ?>"><?php echo hc($v); ?></a>
 					</li>
 			<?php
 				} else { ?>
 					  <li class="nav-item">
-								<a href="/<?php echo $k; ?>/main" class="nav-link <?php echo($_GET['module'] == $k ? 'active' : '') ?>"><?php echo $v; ?></a>
+								<a href="/<?php echo hc($k); ?>/main" class="nav-link <?php echo($_GET['module'] == $k ? 'active' : '') ?>"><?php echo hc($v); ?></a>
 						</li> <?php
 				}
 			}

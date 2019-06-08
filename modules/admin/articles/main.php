@@ -2,7 +2,7 @@
 if(isset($_POST['article-search'])) {
 	$res = q("
 		SELECT * FROM `articles` 
-		WHERE `title` LIKE '%".escStr($_POST['article-search'])."%'
+		WHERE `title` LIKE '%".es($_POST['article-search'])."%'
 	");
 } else {
 	$res = q("

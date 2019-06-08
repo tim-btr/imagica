@@ -15,7 +15,7 @@
     <input type="submit" value="Авторизоваться">
     <?php 
     if(isset($status)) {
-    	echo $status;
+    	  echo $status;
     }
     ?>
   </form>
