@@ -1,4 +1,6 @@
-<?php 
+<?php
+use library\Mail\Mail;
+
 Core::$CSS[] = '<link rel="stylesheet" href="">';
 
 if(isset($_POST['login'], $_POST['name'], $_POST['pass'], $_POST['email']) ) {
@@ -60,17 +62,19 @@ if(isset($_POST['login'], $_POST['name'], $_POST['pass'], $_POST['email']) ) {
 			`hash`     = '".es(myHash($_POST['login'].$_POST['email']))."'
 		") or die(mysqli_error($link));
 
-		$id = DbConnect::_()->insert_id;
+		$id = \DB::_()->insert_id;
 
 		$_SESSION['register'] = 'ok';
-		
-		Mail::$to = es($_POST['email']);
-		Mail::$subject = 'Подтверждение регистрации';
-		Mail::$text = '
-			Чтобы активировать Вашу учётную запись, пройдите по <a href="'.Core::$domain.'/index.php?module=account&page=activate&id='.$id.'&hash='.es(myHash($_POST['login'].$_POST['email'])).'">данной ссылке</a> ';
-		Mail::send();
 
-		$_SESSION['code'] = Mail::$text;
+		$mail = new Mail();
+
+		$mail->to = es($_POST['email']);
+		$mail->subject = 'Подтверждение регистрации';
+		$mail->text = '
+			Чтобы активировать Вашу учётную запись, пройдите по <a href="'.Core::$domain.'/index.php?module=account&page=activate&id='.$id.'&hash='.es(myHash($_POST['login'].$_POST['email'])).'">данной ссылке</a> ';
+		$mail->send();
+
+		$_SESSION['code'] = $mail->text;
 		header('Location: /account/register');
 		exit;
 	}

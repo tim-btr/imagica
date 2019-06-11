@@ -49,7 +49,7 @@ if (isset($_POST['name'], $_POST['login'], $_POST['pass'], $_POST['email'])) {
 		$res = q("
 			SELECT * FROM `users` 
 			WHERE `id`       <> ".(int)$_GET['key3']."
-			AND   `login`    = '".escStr($_POST['login'])."'
+			AND   `login`    = '".es($_POST['login'])."'
 			LIMIT 1
 		");
 
@@ -60,7 +60,7 @@ if (isset($_POST['name'], $_POST['login'], $_POST['pass'], $_POST['email'])) {
 		$res = q("
 			SELECT * FROM `users` 
 			WHERE `id`       <> ".(int)$_GET['key3']."
-			AND   `email`    = '".escStr($_POST['email'])."'
+			AND   `email`    = '".es($_POST['email'])."'
 			LIMIT 1
 		");
 
@@ -94,10 +94,10 @@ if (isset($_POST['name'], $_POST['login'], $_POST['pass'], $_POST['email'])) {
 	if(count($errors) == 0){
 		q("
 			UPDATE `users` SET 
-			`name` = '".escStr($_POST['name'])."',
-			`login` = '".escStr($_POST['login'])."',
-			`password` = '".escStr($password)."',
-			`email` = '".escStr($_POST['email'])."',
+			`name` = '".es($_POST['name'])."',
+			`login` = '".es($_POST['login'])."',
+			`password` = '".es($password)."',
+			`email` = '".es($_POST['email'])."',
 			`age` = ".$age.",
 			`sex` = '".$sex."',
 			`role` = '".$role."'

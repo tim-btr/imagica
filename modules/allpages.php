@@ -1,4 +1,9 @@
 <?php
+$navigation = [
+	''=>'Главная',
+	'articles'=>'Материалы',
+];
+
 if(isset($_GET['module'])) {
 	$res = q("
 		SELECT * FROM `meta`

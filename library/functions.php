@@ -13,11 +13,21 @@ function wtf($el, $stop = false) {
 
 /*
  * Функции - оболочки для обработки массивов
+ * trimAll
  * intAll
  * floatAll
  * hc
  * es
  */
+function trimAll($el, $char = ' ') {
+	if(!is_array($el)) {
+		$el = trim($el, $char);
+	} else {
+		$el = array_map('trimAll',$el);
+	}
+	return $el;
+}
+
 function intAll($el) {
 	if(!is_array($el)) {
 		$el = (int)($el);
@@ -45,10 +55,17 @@ function hc($el) {
 	return $el;
 }
 
+/*
+ * Для вставки данных в БД
+ */
 function es($el,$key = 0) {
 	return \DB::_($key)->real_escape_string($el);
 }
 
+
+/*
+ * autoload
+ */
 spl_autoload_register(function($class) {
 	$path = str_replace('\\', '/', $class);
 	if(file_exists('./'.$path.'.php')) {
@@ -62,6 +79,7 @@ spl_autoload_register(function($class) {
 function myHash($var, $salt = 'mmorpg', $salt2 = 'wtfiamdhere') {
 	return crypt(md5($var.$salt),$salt2);
 }
+
 
 //запрос к базе данных и логирование ошибок.
 function q($query, $key = 0) {

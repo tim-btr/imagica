@@ -1,7 +1,7 @@
 <div class="admin-users-notice">
   <?php 
   if(isset($notice) ) {
-	  echo toHtm($notice);
+	  echo hc($notice);
   }
   ?>
 </div>

@@ -8,13 +8,18 @@ ob_start();
 
 include './library/functions.php';
 include './config/config.php';
-include './controller.php';
+include './FrontController.php';
+
+$frontContr = new FrontController;
+if(!$frontContr->init()) {
+	header('Location: /404');
+	exit;
+}
 
 include './'.Core::$MODEL.'/allpages.php';
 
-
 if(!file_exists('./'.Core::$MODEL.'/'.$_GET['module'].'/'.$_GET['page'].'.php') || !file_exists('./'.Core::$MODEL.'/'.$_GET['module'].'/view/'.$_GET['page'].'.tpl')) {
-	header('Location: /errors/404');
+	header('Location: /404');
 	exit;
 }
 

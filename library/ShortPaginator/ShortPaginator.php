@@ -1,5 +1,5 @@
 <?php
-class Paginator {
+class ShortPaginator {
 	public $total_rows;
 	public $total_pages;
 	public $rows_each_page;
