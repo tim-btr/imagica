@@ -1,18 +1,22 @@
 <?php
 $navigation = [
 	''=>'Главная',
-	'articles'=>'Материалы',
+	'about'=>'Инфо',
+	'posts'=>'Материалы',
+	'contacts'=>'Связь',
 ];
 
 if(isset($_GET['module'])) {
 	$res = q("
 		SELECT * FROM `meta`
-		WHERE `module` = '".$_GET['module']."'
+		WHERE `module` = '".$_GET['module']."_".$_GET['page']."'
 		LIMIT 1
 	");
 	
 	$row = $res->fetch_assoc();
 	Core::$META['title'] = $row['title'];
+	Core::$META['description'] = $row['description'];
+	Core::$META['keywords'] = $row['keywords'];
 }
 
 

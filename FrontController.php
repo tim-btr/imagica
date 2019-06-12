@@ -18,7 +18,6 @@ class FrontController
 	public function init()
 	{
 		$uri = $this->getUri();
-
 		foreach($this->routes as $k=>$v) {
 			if(preg_match('#^'.$k.'$#ui', $uri)) {
 
@@ -49,6 +48,5 @@ class FrontController
 				return true;
 			}
 		}
-		return false;
 	}
 }

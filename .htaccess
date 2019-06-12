@@ -3,12 +3,10 @@ php_flag display_errors ON
 
 RewriteEngine on 
 
-
-RewriteCond %{REQUEST_URI} !^/forum
-RewriteCond %{REQUEST_URI} !^/ckeditor
+RewriteBase /
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
+RewriteRule ^(.*)$ index.php
 

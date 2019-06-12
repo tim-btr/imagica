@@ -1,12 +1,20 @@
 <?php
 return [
-	//Страница по-умолчанию
+	//Главная страница, страница по-умолчанию
 	'' => 'static/main',
 
+	//Инфо
+	'about' => 'about/main',
+	'about/main' => 'about/main',
+
 	//Материалы
-	'articles' => 'articles/main',
-	'articles/main' => 'articles/main',
-	'articles/single/([0-9]+)' => 'articles/single/$1',
+	'posts' => 'posts/main',
+	'posts/main' => 'posts/main',
+	'posts/single/([0-9]+)' => 'posts/single/$1',
+
+	//Контакты
+	'contacts' => 'contacts/main',
+	'contacts/main' => 'contacts/main',
 
 	//Авторизация и регистрация
 	'account/login' => 'account/login',
@@ -15,9 +23,9 @@ return [
 
 	//Панель администратора
 	'admin' => 'admin/static/main',
-	'admin/articles' => 'admin/articles/main',
-	'admin/articles/main' => 'admin/articles/main',
-	'admin/articles/edit-article/([a-z]+)/([0-9]+)' => 'admin/articles/edit-article/$1/$2',
+	'admin/posts' => 'admin/posts/main',
+	'admin/posts/main' => 'admin/posts/main',
+	'admin/posts/edit-post/([a-z]+)/([0-9]+)' => 'admin/posts/edit-post/$1/$2',
 	'admin/users' => 'admin/users/main',
 	'admin/users/main' => 'admin/users/main',
 	'admin/users/edit-user/([a-z]+)/([0-9]+)' => 'admin/users/edit-user/$1/$2',

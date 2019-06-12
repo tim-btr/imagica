@@ -1,12 +1,23 @@
-.logo, .lead span, .nav-link, #features h3, .testim-head {
-	text-transform:uppercase;
+.auth p {
+  display: inline;
 }
-
-.logo:hover {
-	text-decoration: none;
-	color:#007bff;
+.auth a {
+  text-transform: capitalize;
+  color: #1d2124;
 }
-
-nav, div.carousel {
-	margin-bottom: 25px;
+.auth a:hover {
+  color: #1d2124;
 }
+.banner {
+  height: 500px;
+  background: url("/skins/default/img/banner.png") 0px -145px no-repeat;
+  background-size: cover;
+}
+nav .navbar-brand {
+  margin-right: 4rem;
+}
+footer {
+  border-top: 2px solid #e0e5e9;
+  padding: 35px 0px;
+}
+/*# sourceMappingURL=custom.css.map */

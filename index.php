@@ -8,9 +8,10 @@ ob_start();
 
 include './library/functions.php';
 include './config/config.php';
-include './FrontController.php';
 
 $frontContr = new FrontController;
+if(!$frontContr) echo 222;
+
 if(!$frontContr->init()) {
 	header('Location: /404');
 	exit;
