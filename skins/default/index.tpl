@@ -31,8 +31,16 @@
 				}
 				?>
 				<div class="auth col align-self-end text-right">
-					<a href="/account/login">вход</a>
-					<a href="/account/register">регистрация</a>
+					<?php
+					if(!isset($_SESSION['user'])) { ?>
+						  <a href="/account/login">вход</a>
+						  <a href="/account/register">регистрация</a>
+					<?php
+					} else { ?>
+						  <a href="/account/exit">выход</a>
+					<?php
+					}
+					?>
 		  	</div>
 			</div>
 		</div>

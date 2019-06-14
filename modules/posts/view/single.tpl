@@ -12,9 +12,9 @@
 		<p class="h3"><?php echo hc($row['title']);?></p>
 		<p class="full-text"><?php echo hc($row['text']);?></p>
 		<div>
-			<small class="text-muted"><?php echo hc($row['author']);?></small>
+			<small class="text-muted">Автор: <?php echo hc($row['author']);?></small>
 
-			<small class="text-muted float-lg-right"><?php echo hc($row['date']);?></small>
+			<small class="text-muted float-lg-right">Дата публикации: <?php echo hc($row['date']);?></small>
 		</div>
 	</section>
 </div>

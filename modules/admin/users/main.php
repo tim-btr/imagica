@@ -2,7 +2,7 @@
 if(isset($_POST['user-search'])) {
 	$res = q("
 		SELECT * FROM `users` 
-		WHERE `login` LIKE '%".escStr($_POST['user-search'])."%'
+		WHERE `login` LIKE '%".es($_POST['user-search'])."%'
 	");
 } else {
 	$res = q("

@@ -1,0 +1,93 @@
+nav.navbar {
+  background-color: #3f474e;
+  padding: 0.8rem 1rem;
+}
+nav.navbar .title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+@media (max-width: 940px) {
+  nav.navbar .title {
+    font-size: .8rem;
+    font-weight: 100;
+  }
+}
+nav.navbar,
+nav.navbar a {
+  color: white;
+  text-transform: uppercase;
+}
+.sidebar {
+  background-color: #3f474e;
+  position: fixed;
+  height: 500vh;
+}
+.sidebar .menu-item {
+  margin-top: 13px;
+  padding-left: 1.6rem;
+  position: relative;
+}
+@media (max-width: 1140px) {
+  .sidebar .menu-item {
+    padding-left: 1rem;
+  }
+}
+.sidebar .glyph {
+  color: #7a8793;
+  font-size: 18px;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+@media (max-width: 1140px) {
+  .sidebar .glyph {
+    font-size: 14px;
+  }
+}
+.sidebar .menu-link {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #7a8793;
+  word-wrap: break-word;
+}
+@media (max-width: 1140px) {
+  .sidebar .menu-link {
+    font-size: 14px;
+  }
+}
+.sidebar .menu-link:hover {
+  text-decoration: none;
+  color: #a4adb5;
+}
+main {
+  padding-top: 15px;
+}
+main span {
+  color: red;
+}
+main .no-padd {
+  padding-left: 0;
+  padding-right: 0;
+}
+main .search-form {
+  margin-bottom: 18px;
+}
+main .search-form .form-group {
+  margin-right: 15px !important;
+}
+main table {
+  margin-top: 18px;
+}
+main .info {
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 18px;
+}
+main .warning {
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 18px;
+  color: #000;
+}
+/*# sourceMappingURL=admin.css.map */

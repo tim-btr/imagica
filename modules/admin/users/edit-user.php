@@ -1,19 +1,45 @@
 <?php
-if (isset($_GET['key2']) && $_GET['key2'] == 'edit') {
-	$res = q("
-		SELECT * FROM `users`
-		WHERE `id` = '".(int)$_GET['key3']."'
-		LIMIT 1
-	");
- 
-	if(!$res->num_rows){
-		$_SESSION['notice'] = 'Такого пользователя не существует!';
-		header('Location: /admin/users/main');
+if (isset($_GET['key2'])) {
+	if($_GET['key2'] == 'ban') {
+		q("
+			UPDATE `users` SET 
+			`role` = 'banned'
+			WHERE `id` = ".(int)$_GET['key3']
+		);
+
+		$_SESSION['notice'] = 'Данные пользователя были успешно отредактированы';
+		header('Location: /admin/users');
 		exit();
 	}
 
-	$row = $res->fetch_assoc();
-	$res->close();
+	if($_GET['key2'] == 'unban') {
+		q("
+			UPDATE `users` SET 
+			`role` = 'user'
+			WHERE `id` = ".(int)$_GET['key3']
+		);
+
+		$_SESSION['notice'] = 'Данные пользователя были успешно отредактированы';
+		header('Location: /admin/users');
+		exit();
+	}
+
+	if($_GET['key2'] == 'edit') {
+		$res = q("
+			SELECT * FROM `users`
+			WHERE `id` = ".(int)$_GET['key3']."
+			LIMIT 1
+		");
+
+		if(!$res->num_rows){
+			$_SESSION['notice'] = 'Такого пользователя не существует!';
+			header('Location: /admin/users/main');
+			exit();
+		}
+
+		$row = $res->fetch_assoc();
+		$res->close();
+	}
 }
 
 if (isset($_POST['name'], $_POST['login'], $_POST['pass'], $_POST['email'])) {
@@ -32,7 +58,7 @@ if (isset($_POST['name'], $_POST['login'], $_POST['pass'], $_POST['email'])) {
 	}
 
 	if(empty($_POST['pass'])) {
-		$password = $row['password'];
+		$errors['pass'] = 'Не заполнен пароль';
 	} elseif (mb_strlen($_POST['pass']) > 8) {
 		$errors['pass'] = 'Пароль слишком длинный';
 	} elseif (mb_strlen($_POST['pass']) < 3) {
@@ -69,16 +95,6 @@ if (isset($_POST['name'], $_POST['login'], $_POST['pass'], $_POST['email'])) {
 		}		
 	}
 
-	if(isset($_POST['ban'])){
-		if($_POST['ban'] == 'ban') {
-			$role = 'banned';
-		} else {
-			$role = 'user';
-		}
-	} else {
-		$role = $row['role'];
-	}
-
 	if(isset($_POST['age'])){
 		$age = (int)$_POST['age'];
 	} else {
@@ -99,16 +115,15 @@ if (isset($_POST['name'], $_POST['login'], $_POST['pass'], $_POST['email'])) {
 			`password` = '".es($password)."',
 			`email` = '".es($_POST['email'])."',
 			`age` = ".$age.",
-			`sex` = '".$sex."',
-			`role` = '".$role."'
+			`sex` = '".$sex."'
 			WHERE `id` = ".(int)$_GET['key3']
 		);
 
 		$_SESSION['notice'] = 'Данные пользователя были успешно отредактированы';
-		header('Location: /admin/users/main');
+		header('Location: /admin/users');
 		exit();
 	}
-} 
+}
 
 if(isset($_SESSION['notice'])){
 	$notice = $_SESSION['notice'];

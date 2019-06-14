@@ -7,16 +7,20 @@ $navigation = [
 ];
 
 if(isset($_GET['module'])) {
-	$res = q("
+	if(Core::$SKIN == 'admin') {
+		Core::$META['title'] = 'Панель администратора';
+	} else {
+		$res = q("
 		SELECT * FROM `meta`
 		WHERE `module` = '".$_GET['module']."_".$_GET['page']."'
 		LIMIT 1
 	");
-	
-	$row = $res->fetch_assoc();
-	Core::$META['title'] = $row['title'];
-	Core::$META['description'] = $row['description'];
-	Core::$META['keywords'] = $row['keywords'];
+
+		$row = $res->fetch_assoc();
+		Core::$META['title'] = $row['title'];
+		Core::$META['description'] = $row['description'];
+		Core::$META['keywords'] = $row['keywords'];
+	}
 }
 
 
@@ -46,5 +50,4 @@ if(isset($_SESSION['user'])) {
 	} else {
 		include './modules/account/exit.php';
 	}
-} 
-$res->close();
+}

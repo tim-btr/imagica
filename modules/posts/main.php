@@ -1,12 +1,11 @@
 <?php
-
 $result = q("
-	SELECT * FROM `articles` ORDER BY `id` ASC
+	SELECT * FROM `posts` ORDER BY `id` ASC
 ");
 
 if(!mysqli_num_rows($result)) {
 	$_SESSION['info'] = 'Нет записей';
-	header('Location: /articles/main');
+	header('Location: /posts/main');
 	exit;
 }
 

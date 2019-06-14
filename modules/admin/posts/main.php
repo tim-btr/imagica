@@ -1,12 +1,12 @@
 <?php
-if(isset($_POST['article-search'])) {
+if(isset($_POST['post-search'])) {
 	$res = q("
-		SELECT * FROM `articles` 
-		WHERE `title` LIKE '%".es($_POST['article-search'])."%'
+		SELECT * FROM `posts` 
+		WHERE `title` LIKE '%".es($_POST['post-search'])."%'
 	");
 } else {
 	$res = q("
-		SELECT * FROM `articles`
+		SELECT * FROM `posts`
 		ORDER BY `id` ASC
 	");
 }

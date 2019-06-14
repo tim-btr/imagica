@@ -2,33 +2,47 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="<?php echo hc(Core::$META['descrption']); ?>">
-    <meta name="keywords" content="<?php echo hc(Core::$META['keywords']); ?>">
-    <link rel="stylesheet" href="/skins/admin/css/style-admin.css">
-	<title></title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/skins/admin/css/admin.css">
+	<script src="https://kit.fontawesome.com/26e1b359c4.js"></script>
+	<title><?php echo hc(Core::$META['title']); ?></title>
 </head>
 <body>
-  <div class="adm-top-banner">
-	<a href="/admin/static/main"><img src="" alt="logo"></a>
-    <a href="/account/exit" class="admin-top-link">выход</a>
-	<a class="admin-top-link" href="/">на сайт</a><div class="clear"></div>
-  </div>
-  <div class="adm-menu-div">
-	<?php 
-	if(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') {
-	?>
-	<a class="admin-menu-link" href="/admin/articles">материалы</a>
-  <a class="admin-menu-link" href="/admin/users">пользователи</a>
-	<?php }?>
-  </div>
-  <div class="adm-inner">
-  <?php
-  echo $content;
-  ?>
-  </div>
-  
-  <div class="adm-footer">
-    <a class="admin-foot-link" href="/">softlex</a>
-  </div>
+<nav class="navbar">
+	<div class="title">
+		панель администратора
+	</div>
+	<div>
+		<a href="/">сайт</a>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-2 sidebar">
+		<?php
+		if(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') {?>
+				<div class="menu-item">
+					<i class="fas fa-list-ul glyph"></i>
+					<a class="menu-link" href="/admin/posts">публикации</a>
+				</div>
+			  <div class="menu-item">
+					<i class="fas fa-user glyph"></i>
+					<a class="menu-link" href="/admin/users">пользователи</a>
+				</div>
+				<div class="menu-item">
+					<i class="fas fa-sign-out-alt glyph"></i>
+					<a class="menu-link" href="/account/exit">выход</a>
+				</div>
+			<?php
+		}
+		?>
+		</div>
+		<main class="col-10 offset-2">
+			<?php
+			echo $content;
+			?>
+		</main>
+	</div>
+</div>
 </body>
 </html>
