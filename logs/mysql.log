@@ -30223,3 +30223,148 @@ Table 'imagica.posts' doesn't exist
 
 		=================================
  
+Запрос не был выполнен.
+
+		ЗАПРОС: 
+				UPDATE `users` SET 
+				`hash`     = 'wt3vDrhn5hjgg',
+				`addition` = 'wt7ouHIhtNCDo'
+				WHERE
+				`id`    = 1 AND 
+			    `login` = 'admin'
+			
+Unknown column 'addition' in 'field list'
+
+		Выявлена ошибка в файле: C:\_WORK\OPENSERVER\_SERVER\domains\imagicac\modules\admin\account\login.php
+
+		Строка: 29, текст запроса: 
+				UPDATE `users` SET 
+				`hash`     = 'wt3vDrhn5hjgg',
+				`addition` = 'wt7ouHIhtNCDo'
+				WHERE
+				`id`    = 1 AND 
+			    `login` = 'admin'
+			
+
+		Время: 2019-06-15 04:06:32
+
+		Ошибка: 
+
+		=================================
+ 
+Запрос не был выполнен.
+
+		ЗАПРОС: 
+				UPDATE `users` SET 
+				`hash`     = 'wt3vDrhn5hjgg',
+				`addition` = 'wt7ouHIhtNCDo'
+				WHERE
+				`id`    = 1 AND 
+			    `login` = 'admin'
+			
+Unknown column 'addition' in 'field list'
+
+		Выявлена ошибка в файле: C:\_WORK\OPENSERVER\_SERVER\domains\imagicac\modules\admin\account\login.php
+
+		Строка: 29, текст запроса: 
+				UPDATE `users` SET 
+				`hash`     = 'wt3vDrhn5hjgg',
+				`addition` = 'wt7ouHIhtNCDo'
+				WHERE
+				`id`    = 1 AND 
+			    `login` = 'admin'
+			
+
+		Время: 2019-06-15 04:06:35
+
+		Ошибка: 
+
+		=================================
+ 
+Запрос не был выполнен.
+
+		ЗАПРОС: 
+				UPDATE `users` SET 
+				`hash`     = 'wt3vDrhn5hjgg',
+				`addition` = 'wt7ouHIhtNCDo'
+				WHERE
+				`id`    = 1 AND 
+			    `login` = 'admin'
+			
+Unknown column 'addition' in 'field list'
+
+		Выявлена ошибка в файле: C:\_WORK\OPENSERVER\_SERVER\domains\imagicac\modules\admin\account\login.php
+
+		Строка: 29, текст запроса: 
+				UPDATE `users` SET 
+				`hash`     = 'wt3vDrhn5hjgg',
+				`addition` = 'wt7ouHIhtNCDo'
+				WHERE
+				`id`    = 1 AND 
+			    `login` = 'admin'
+			
+
+		Время: 2019-06-15 04:06:35
+
+		Ошибка: 
+
+		=================================
+ 
+Запрос не был выполнен.
+
+		ЗАПРОС: 
+				UPDATE `users` SET 
+				`hash`     = 'wt3vDrhn5hjgg',
+				`addition` = 'wt7ouHIhtNCDo'
+				WHERE
+				`id`    = 1 AND 
+			    `login` = 'admin'
+			
+Unknown column 'addition' in 'field list'
+
+		Выявлена ошибка в файле: C:\_WORK\OPENSERVER\_SERVER\domains\imagicac\modules\account\login.php
+
+		Строка: 28, текст запроса: 
+				UPDATE `users` SET 
+				`hash`     = 'wt3vDrhn5hjgg',
+				`addition` = 'wt7ouHIhtNCDo'
+				WHERE
+				`id`    = 1 AND 
+			    `login` = 'admin'
+			
+
+		Время: 2019-06-15 04:06:46
+
+		Ошибка: 
+
+		=================================
+ 
+Запрос не был выполнен.
+
+		ЗАПРОС: 
+				UPDATE `users` SET 
+				`hash`     = 'wt3vDrhn5hjgg',
+				`addition` = 'wt7ouHIhtNCDo'
+				WHERE
+				`id`    = 1 AND 
+			    `login` = 'admin'
+			
+Unknown column 'addition' in 'field list'
+
+		Выявлена ошибка в файле: C:\_WORK\OPENSERVER\_SERVER\domains\imagicac\modules\account\login.php
+
+		Строка: 28, текст запроса: 
+				UPDATE `users` SET 
+				`hash`     = 'wt3vDrhn5hjgg',
+				`addition` = 'wt7ouHIhtNCDo'
+				WHERE
+				`id`    = 1 AND 
+			    `login` = 'admin'
+			
+
+		Время: 2019-06-15 05:06:17
+
+		Ошибка: 
+
+		=================================
+ 

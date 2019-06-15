@@ -23,11 +23,11 @@
 </head>
 <body>
 	<header>
-		<div class="container-fluid bg-light">
+		<div class="container-fluid">
 			<div class="row">
 				<?php
 				if(isset($_SESSION['user'])) {
-					  echo '<div class="col align-self-start">приветствую, '.$_SESSION['user']['name'].'</div>';
+					  echo '<div class="col align-self-start greet">приветствую, '.$_SESSION['user']['name'].'</div>';
 				}
 				?>
 				<div class="auth col align-self-end text-right">
@@ -44,7 +44,7 @@
 		  	</div>
 			</div>
 		</div>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light">
 			<a class="navbar-brand" href="/">imagica</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -69,15 +69,8 @@
 	<?php echo $content; ?>
 </main>
 
-<footer>
+<footer class="">
 	<div class="container-fluid text-center">
-		<div class="row">
-			<div class="col align-self-center">
-				<span class="icons">aaa</span>
-				<span class="icons">aaa</span>
-				<span class="icons">aaa</span>
-			</div>
-		</div>
 		&copy; <?php echo Core::$YEAR.' - '.date('Y'); ?> Imagica.
 	</div>
 </footer>

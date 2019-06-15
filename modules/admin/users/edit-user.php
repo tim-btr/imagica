@@ -53,15 +53,15 @@ if (isset($_POST['name'], $_POST['login'], $_POST['pass'], $_POST['email'])) {
 		$errors['login'] = 'Не заполнен логин';
 	} elseif(mb_strlen($_POST['login']) < 3) {
 		$errors['login'] = 'Логин слишком короткий';
-	} elseif(mb_strlen($_POST['login']) > 10) {
+	} elseif(mb_strlen($_POST['login']) > 15) {
 		$errors['login'] = 'Логин слишком длинный';
 	}
 
 	if(empty($_POST['pass'])) {
 		$errors['pass'] = 'Не заполнен пароль';
-	} elseif (mb_strlen($_POST['pass']) > 8) {
+	} elseif (mb_strlen($_POST['pass']) > 12) {
 		$errors['pass'] = 'Пароль слишком длинный';
-	} elseif (mb_strlen($_POST['pass']) < 3) {
+	} elseif (mb_strlen($_POST['pass']) < 4) {
 		$errors['pass'] = 'Пароль слишком короткий';
 	} else{
 		$password = myHash($_POST['pass']);

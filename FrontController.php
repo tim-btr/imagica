@@ -18,12 +18,13 @@ class FrontController
 	public function init()
 	{
 		$uri = $this->getUri();
+
 		foreach($this->routes as $k=>$v) {
 			if(preg_match('#^'.$k.'$#ui', $uri)) {
 
 				$temp = preg_replace('#^'.$k.'$#ui', $v, $uri);
-				$params = explode('/', $temp);
 
+				$params = explode('/', $temp);
 				if($params[0] == 'admin') {
 					Core::$MODEL = Core::$MODEL.'/admin';
 					Core::$SKIN = 'admin';

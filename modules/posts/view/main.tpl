@@ -16,7 +16,6 @@
 				<p><?php echo hc($row['description']);?></p>
 				<a href="/posts/single/<?php echo hc($row['id']) ?>" class="btn btn-primary">Подробнее &rarr;</a>
 			</section>
-		<hr>
 			<?php
 		++$i;
 	}	?>

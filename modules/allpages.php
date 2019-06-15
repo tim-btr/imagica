@@ -1,9 +1,7 @@
 <?php
 $navigation = [
 	''=>'Главная',
-	'about'=>'Инфо',
 	'posts'=>'Материалы',
-	'contacts'=>'Связь',
 ];
 
 if(isset($_GET['module'])) {

@@ -7,7 +7,7 @@ class Core {
 	static $dbpass = '';
 	static $db = 'imagica';
 	
-	static $domain = '';
+	static $domain = 'http://imagica';
 	
 	static $MODEL = 'modules';
 	static $SKIN = 'default';

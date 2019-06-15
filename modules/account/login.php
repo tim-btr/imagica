@@ -27,7 +27,8 @@ if(isset($_POST['login'], $_POST['pass'])) {
 			    `login` = '".es($_SESSION['user']['login'])."'
 			");
 		}
-		header('Location: /'); exit;
+		header('Location: /');
+		exit;
 	} else {
 		$status = '<p><b>Неправильные данные</b></p>';
 	}
